@@ -1,0 +1,7 @@
+K6 -> install: https://grafana.com/docs/k6/latest/set-up/install-k6/
+
+1. buat direktori dan masuk ke direktori tsb
+2. ketik npm init, lalu enter-enter saja kecuali author ketik saja nama sendiri dan type nya ketik module
+3. setelah itu install library nya:
+ - npm install k6
+ - npm install --save-dev @types/k6
