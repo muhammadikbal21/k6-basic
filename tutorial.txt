@@ -12,3 +12,9 @@ link youtube -> https://www.youtube.com/watch?v=VGO5CfOve90
 6. run file beserta summary outputnya -> k6 run namafolder/namafile.js --summary-export lokasi-output.json
  (contoh: k6 run src/ping.js --summary-export report.json)
  informasi output atau result pada log terminal setelah di running -> https://grafana.com/docs/k6/latest/using-k6/metrics/reference/ 
+7. run file menggunakan realtime output -> k6 run --out json=test_results.csv script.js
+ (contoh: k6 run --out json=realtime-report.json src/ping.js)
+ perbedaan menggunakan realtime output dan summary output adalah: 
+  - realtime output langsung ter-create dan mencatat log nya ketika script masih berlangsung
+  - summary output belum meng-create log nya ketika script masih berlangsung dan harus menunggu sampai selesai dijalankan untuk ter-create report nya
+ realtime report biasanya digunakan bersamaan third-party 
