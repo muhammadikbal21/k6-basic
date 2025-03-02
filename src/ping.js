@@ -4,7 +4,9 @@ import { sleep, check } from 'k6';
 // options adalah variable yang digunakan untuk melakukan pengaturan, misalnya jumlah virtual user (VU) dan berapa lama durasi pengujian
 export const options = {
   vus: 10, // virtual user sebanyak 10 user
-  duration: '30s', // durasi 30 detik
+  duration: '10s', // durasi 10 detik
+  summaryTrendStats: ['avg', 'min', 'med', 'max', 'p(90)', 'p(95)', 'p(99)'] // summary statistic berguna untuk menambah atau mengatur output apa saja yang ingin kita tampilkan/simpan ke report
+  // p(90) dst. adalah persentil, maksudnya adalah di persentase 90/95/95 ini response time nya di berapa detik
 };
 
 // Default function adalah function yang dijalankan oleh K6 sesuai dengan pengaturan di variable options 
