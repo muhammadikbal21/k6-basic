@@ -1,7 +1,11 @@
 K6 -> install: https://grafana.com/docs/k6/latest/set-up/install-k6/
+module ppt -> https://docs.google.com/presentation/d/1L8_Z0Kq26alF-k97Cr0luQUXRpcsa9PXqA16111-jlk/edit#slide=id.p
+link youtube -> https://www.youtube.com/watch?v=VGO5CfOve90
 
 1. buat direktori dan masuk ke direktori tsb
 2. ketik npm init, lalu enter-enter saja kecuali author ketik saja nama sendiri dan type nya ketik module
 3. setelah itu install library nya:
  - npm install k6
  - npm install --save-dev @types/k6
+4. buat file menggunakan command -> k6 new namafolder/namafile.js
+5. run file nya -> k6 run namafolder/namafile.js
