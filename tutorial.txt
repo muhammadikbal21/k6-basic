@@ -9,3 +9,6 @@ link youtube -> https://www.youtube.com/watch?v=VGO5CfOve90
  - npm install --save-dev @types/k6
 4. buat file menggunakan command -> k6 new namafolder/namafile.js
 5. run file nya -> k6 run namafolder/namafile.js
+6. run file beserta summary outputnya -> k6 run namafolder/namafile.js --summary-export lokasi-output.json
+ (contoh: k6 run src/ping.js --summary-export report.json)
+ informasi output atau result pada log terminal setelah di running -> https://grafana.com/docs/k6/latest/using-k6/metrics/reference/ 
