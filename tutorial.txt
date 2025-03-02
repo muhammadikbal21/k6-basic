@@ -18,3 +18,7 @@ link youtube -> https://www.youtube.com/watch?v=VGO5CfOve90
   - realtime output langsung ter-create dan mencatat log nya ketika script masih berlangsung
   - summary output belum meng-create log nya ketika script masih berlangsung dan harus menunggu sampai selesai dijalankan untuk ter-create report nya
  realtime report biasanya digunakan bersamaan third-party 
+8. informasi fitur web dashboard untuk melihat realtime output nya -> https://grafana.com/docs/k6/latest/results-output/web-dashboard/
+9. run web dashboard dengan OS Linux/Unix/MacOS -> K6_WEB_DASHBOARD=true k6 run script.js
+   Windows -> set K6_WEB_DASHBOARD=true 
+              k6 run --out web-dashboard src/ping.js (klik port localhost nya yang ada di terminal)
