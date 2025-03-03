@@ -22,3 +22,6 @@ link youtube -> https://www.youtube.com/watch?v=VGO5CfOve90
 9. run web dashboard dengan OS Linux/Unix/MacOS -> K6_WEB_DASHBOARD=true k6 run script.js
    Windows -> set K6_WEB_DASHBOARD=true 
               k6 run --out web-dashboard src/ping.js (klik port localhost nya yang ada di terminal)
+10. Stages adalah fitur untuk meningkatkan atau menurunkan virtual user ketika melakukan pengujian menggunakan atribut stages. 
+    Dengan ini kita bisa meningkatkan jumlah user dalam durasi tertentu, dan menurunkan user dalam durasi tertentu.
+    informasi stages -> https://grafana.com/docs/k6/latest/using-k6/k6-options/reference/#stages
