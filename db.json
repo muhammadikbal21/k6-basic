@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "user@example.com",
+      "password": "password123",
+      "token": "QpwL5tke4Pnpja7X4"
+    },
+    {
+      "id": 2,
+      "email": "newuser@example.com",
+      "password": "test123",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5ld3VzZXJAZXhhbXBsZS5jb20iLCJpYXQiOjE3NDEwMzQ5NDAsImV4cCI6MTc0MTAzODU0MH0.itmans4vq20P7bcOrz1-mp77_JccjUnFynfd-bHWQoo"
+    },
+    {
+      "id": 3,
+      "email": "newuser@examples.com",
+      "password": "test123",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5ld3VzZXJAZXhhbXBsZXMuY29tIiwiaWF0IjoxNzQxMDM0NjUwLCJleHAiOjE3NDEwMzgyNTB9.F_4nbqKOKwZUYGUXrdjc46h3RQQyPUsSFhHKyAyTZeA"
+    },
+    {
+      "id": 4,
+      "email": "newuser@exampless.com",
+      "password": "test123",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5ld3VzZXJAZXhhbXBsZXNzLmNvbSIsImlhdCI6MTc0MTAzNDk5MiwiZXhwIjoxNzQxMDM4NTkyfQ.G9U2DXdMg75uzMeWV5FV9XJgX4E2G4JRcPeX28DIepk"
+    }
+  ]
+}

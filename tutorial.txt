@@ -26,3 +26,8 @@ link youtube -> https://www.youtube.com/watch?v=VGO5CfOve90
     Dengan ini kita bisa meningkatkan jumlah user dalam durasi tertentu, dan menurunkan user dalam durasi tertentu.
     informasi stages -> https://grafana.com/docs/k6/latest/using-k6/k6-options/reference/#stages
 11. informasi http k6 -> https://grafana.com/docs/k6/latest/javascript-api/k6-http/
+12. implement JSON Server dan JSON Web Token (JWT)
+    npm install json-server@0.17.4 jsonwebtoken
+    running json server nya untuk memastikan db yang baru saja dibuat -> json-server --watch db.json --port 3000
+    buat file server.js lalu running server nya -> node server.js
+    Karena di server.js udah ada semua fungsionalitas JSON Server + JWT, jadi nggak perlu jalankan json-server --watch db.json --port 3000 lagi.
