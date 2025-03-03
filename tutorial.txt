@@ -25,3 +25,4 @@ link youtube -> https://www.youtube.com/watch?v=VGO5CfOve90
 10. Stages adalah fitur untuk meningkatkan atau menurunkan virtual user ketika melakukan pengujian menggunakan atribut stages. 
     Dengan ini kita bisa meningkatkan jumlah user dalam durasi tertentu, dan menurunkan user dalam durasi tertentu.
     informasi stages -> https://grafana.com/docs/k6/latest/using-k6/k6-options/reference/#stages
+11. informasi http k6 -> https://grafana.com/docs/k6/latest/javascript-api/k6-http/
