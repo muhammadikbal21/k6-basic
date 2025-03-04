@@ -11,7 +11,7 @@ const SECRET_KEY = "secret123"; // Kunci rahasia buat JWT
 
 // Register (Menyimpan User Baru)
 server.post("/register", (req, res) => {
-  const { email, password } = req.body;
+  const { username, fullName, email, password } = req.body;
   const db = router.db.getState();
 
   if (db.users.some((user) => user.email === email)) {
@@ -20,6 +20,8 @@ server.post("/register", (req, res) => {
 
   const newUser = {
     id: db.users.length + 1,
+    username,
+    fullName,
     email,
     password,
     token: jwt.sign({ email }, SECRET_KEY, { expiresIn: "1h" })
