@@ -1,8 +1,13 @@
 import jsonServer from "json-server";
 import jwt from "jsonwebtoken";
+import fs from "fs";
 const server = jsonServer.create();
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
+
+// Reset db.json sebelum server jalan
+fs.copyFileSync("db-backup.json", "db.json");
+console.log("Database reset to initial state.");
 
 server.use(jsonServer.bodyParser);
 server.use(middlewares);
