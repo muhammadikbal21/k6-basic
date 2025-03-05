@@ -6,6 +6,7 @@ export const options = {
   duration: '10s'
 };
 
+const BASE_URL = 'http://localhost:3001';
 
 export default function() {
   // register
@@ -16,7 +17,7 @@ export default function() {
     email: `muhammadikbal${uniqueId}@gmail.com`,
     password: '123456'
   }
-  const registerResponse = http.post('http://localhost:3001/register/', JSON.stringify(registerRequest), {
+  const registerResponse = http.post(`${BASE_URL}/register`, JSON.stringify(registerRequest), {
     headers: {
       'Accept' : 'application/json',
       'Content-Type' : 'application/json'
@@ -31,7 +32,7 @@ export default function() {
     email: `muhammadikbal${uniqueId}@gmail.com`,
     password: '123456'
   }
-  const loginResponse = http.post('http://localhost:3001/login/', JSON.stringify(loginRequest), {
+  const loginResponse = http.post(`${BASE_URL}/login`, JSON.stringify(loginRequest), {
     headers: {
       'Accept' : 'application/json',
       'Content-Type' : 'application/json'
@@ -43,7 +44,7 @@ export default function() {
 
   // get profile with token
   const loginBodyResponse = loginResponse.json();
-  const currentResponse = http.get('http://localhost:3001/profile/', {
+  const currentResponse = http.get(`${BASE_URL}/profile`, {
     headers: {
       'Accept' : 'application/json',
       'Authorization' : `Bearer ${loginBodyResponse.token}`
