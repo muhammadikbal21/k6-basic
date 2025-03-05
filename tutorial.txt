@@ -31,3 +31,4 @@ link youtube -> https://www.youtube.com/watch?v=VGO5CfOve90
     running json server nya untuk memastikan db yang baru saja dibuat -> json-server --watch db.json --port 3000
     buat file server.js lalu running server nya -> node server.js
     Karena di server.js udah ada semua fungsionalitas JSON Server + JWT, jadi nggak perlu jalankan json-server --watch db.json --port 3000 lagi.
+13. fail() adalah library k6. ini digunakan untuk memastikan ketika ada testingan yang gagal, dia tidak akan melanjutkan code setelah nya
