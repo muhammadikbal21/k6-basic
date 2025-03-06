@@ -32,3 +32,5 @@ link youtube -> https://www.youtube.com/watch?v=VGO5CfOve90
     buat file server.js lalu running server nya -> node server.js
     Karena di server.js udah ada semua fungsionalitas JSON Server + JWT, jadi nggak perlu jalankan json-server --watch db.json --port 3000 lagi.
 13. fail() adalah library k6. ini digunakan untuk memastikan ketika ada testingan yang gagal, dia tidak akan melanjutkan code setelah nya
+14. check() adalah library k6 yang digunakan sebagai assertion dalam load test atau stress test
+    http_req_failed yang ada di terminal adalah total persentase dari seluruh req yang di running dalam 1 file (global)

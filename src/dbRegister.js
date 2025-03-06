@@ -23,7 +23,14 @@ export default function() {
       'Content-Type' : 'application/json'
     }
   });
-  if (registerResponse.status !== 200) {
+  const checkRegister = check(registerResponse, {
+    'register response is 201': (response) => response.status === 201,
+    'register response is 400': (response) => response.status === 400,
+    'register response data must not null': (response) => response.json() != null
+  });
+  // karena disini ada validasi menggunakan fail(), maka code check() dibawah tidak akan dijalankan
+  // tapi jika tidak ada validasi menggunakan fail(), code check() akan dijalankan 
+  if (!checkRegister) {
     fail(`Failed to register user-${uniqueId}`)
   }
   
@@ -38,7 +45,11 @@ export default function() {
       'Content-Type' : 'application/json'
     }
   }); 
-  if (loginResponse.status !== 200) {
+  const checkLogin = check(loginResponse, {
+    'login response is 200': (response) => response.status === 200,
+    'login response token must exist': (response) => response.json().token != null
+  });
+  if (!checkLogin) {
     fail(`Failed to login user-${uniqueId}`)
   }
 
@@ -50,7 +61,13 @@ export default function() {
       'Authorization' : `Bearer ${loginBodyResponse.token}`
     }
   });
-  if (currentResponse.status !== 200) {
+  const checkCurrent = check(currentResponse, {
+    'current response is 200': (response) => response.status === 200,
+    'current response is 401': (response) => response.status === 401,
+    'current response is 403': (response) => response.status === 403,
+    'current response data must not null': (response) => response.json() != null
+  });
+  if (!checkCurrent) {
     fail(`Fail to get user-${uniqueId}`)
   }
 }
