@@ -39,3 +39,8 @@ link youtube -> https://www.youtube.com/watch?v=VGO5CfOve90
     - Menggunakan VU ID untuk membuat data unik.
     - Menyesuaikan perilaku pengujian berdasarkan skenario yang berjalan.
     informasi execution -> https://grafana.com/docs/k6/latest/javascript-api/k6-execution/
+16. Test Life Cycle memiliki tahapan init, setup, default function dan tearDown
+    - Init adalah tahapan K6 membaca semua file script, ini akan dilakukan sekali saja dan wajib dilakukan.
+    - Function setup(), dipanggil sekali di awal, digunakan untuk mempersiapkan data. Function setup() bisa mengembalikan data, yang nanti bisa digunakan oleh default function dan tidak wajib dibuat
+    - Default function, dipanggil terus-menerus sampai waktu pengetesan selesai. Jika setup() function mengembalikan data, default function bisa menerima parameter data dan wajib dibuat
+    - Function teardown(), dieksekusi setelah pengujian selesai dan tidak wajib dibuat
