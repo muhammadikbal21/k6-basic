@@ -1,13 +1,13 @@
 import http from 'k6/http';
 import { sleep, check, fail } from 'k6';
 import execution from 'k6/execution'
+import { loginUser } from './helper/user.js';
+import { createContact } from './helper/contact.js';
 
 export const options = {
   vus: 10,
   duration: '10s'
 };
-
-const BASE_URL = 'http://localhost:3001';
 
 export function setup() {
   const data = [];
@@ -28,16 +28,7 @@ export function getToken() {
     email: email,
     password: '123456'
   }
-  const loginResponse = http.post(`${BASE_URL}/login`, JSON.stringify(loginRequest), {
-    headers: {
-      'Accept' : 'application/json',
-      'Content-Type' : 'application/json'
-    }
-  }); 
-  check(loginResponse, {
-    'login response is 200': (response) => response.status === 200,
-    'login response token must exist': (response) => response.json().token != null
-  });
+  const loginResponse = loginUser(loginRequest);
 
   // get profile with token
   const loginBodyResponse = loginResponse.json();
@@ -48,16 +39,7 @@ export default function(data) {
   const token = getToken();
   for (let i = 0; i < data.length; i++) {
     const contact = data[i];
-    const response = http.post(`${BASE_URL}/contacts`, JSON.stringify(contact), {
-      headers: {
-        'Accept' : 'application/json',
-        'Content-Type' : 'application/json',
-        'Authorization' : `Bearer ${token}`
-      }
-    });
-    check(response, {
-      'create contact status is 201' : (response) => response.status === 201
-    });
+    createContact(token, contact);
   }
 }
 
