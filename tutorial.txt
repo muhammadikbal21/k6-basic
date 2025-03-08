@@ -44,3 +44,4 @@ link youtube -> https://www.youtube.com/watch?v=VGO5CfOve90
     - Function setup(), dipanggil sekali di awal, digunakan untuk mempersiapkan data. Function setup() bisa mengembalikan data, yang nanti bisa digunakan oleh default function dan tidak wajib dibuat
     - Default function, dipanggil terus-menerus sampai waktu pengetesan selesai. Jika setup() function mengembalikan data, default function bisa menerima parameter data dan wajib dibuat
     - Function teardown(), dieksekusi setelah pengujian selesai dan tidak wajib dibuat
+17. Environment Variable -> untuk menggunakan Environment Variable adalah __ENV.NAMA_VARIABLE

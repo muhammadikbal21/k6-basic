@@ -10,8 +10,15 @@ export const options = {
 };
 
 export function setup() {
+  const totalContact = Number(__ENV.TOTAL_CONTACT) || 10; 
+  // disini kita membuat environment variable dengan nama TOTAL_CONTACT yang mana value default nya adalah 10 jika sistem tidak menemukan variable TOTAL_CONTACT
+  // Number disini berfungsi meng-convert environment variable yang tipe data default nya adalah String menjadi Integer
+  // kita bisa input valuenya lewat terminal dengan cara ketik "export TOTAL_CONTACT=20" misalnya
+  // export TOTAL_CONTACT=20 -> IOS
+  // set TOTAL_CONTACT=20 -> Windows Command Prompt
+  // maka ia mempunyai value 20, bukan 10
   const data = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < totalContact; i++) {
     data.push({
       "firstName" : "Kontak",
       "lastName" : `Ke-${i}`,
