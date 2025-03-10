@@ -45,3 +45,31 @@ link youtube -> https://www.youtube.com/watch?v=VGO5CfOve90
     - Default function, dipanggil terus-menerus sampai waktu pengetesan selesai. Jika setup() function mengembalikan data, default function bisa menerima parameter data dan wajib dibuat
     - Function teardown(), dieksekusi setelah pengujian selesai dan tidak wajib dibuat
 17. Environment Variable -> untuk menggunakan Environment Variable adalah __ENV.NAMA_VARIABLE
+18. Scenario berfungsi untuk menjalankan beberapa script dalam 1 perintah / 1 file js
+    Scenario memiliki banyak jenis executor, secara garis besar terbagi menjadi tiga bagian:
+    - Berdasarkan jumlah iterasi (number of iteration)
+    - Berdasarkan jumlah virtual user (number of VU), dan
+    - Berdasarkan kapasitas iterasi (iteration rate)
+    Kekurangan Scenario adalah tidak bisa membedakan setup dan teardown function per scenario.
+    Jika kita menggunakan setup dan teardown function, maka kita akan menggunakan function yang sama untuk semua scenario
+    informasi scenario -> https://grafana.com/docs/k6/latest/using-k6/scenarios/
+
+    a. number of iterations
+    perbedaan pembagian iteration pada shared-iterations dan per-vu-iterations:
+    - shared-iterations bisa saja pembagian iterasi setiap user berbeda karena tiap user memiliki response time yang berbeda.
+    informasi shared-iterations -> https://grafana.com/docs/k6/latest/using-k6/scenarios/executors/shared-iterations/
+    - per-vu-iterations sudah pasti pembagian iterasi rata ke setiap user
+    informasi per-vu-iterations -> https://grafana.com/docs/k6/latest/using-k6/scenarios/executors/per-vu-iterations/
+
+    b. number of virtual user
+    - constant-vus -> executor yang ditentukan jumlah virtual user, dan tiap virtual user akan selalu melakukan melakukan iterasi sampai durasi waktu yang sudah ditentukan
+    informasi constant-vus -> https://grafana.com/docs/k6/latest/using-k6/scenarios/executors/constant-vus/ 
+    - ramping-vus -> executor yang akan membuat virtual user sejumlah yang ditentukan di tiap stage, dan akan bergerak naik atau turun mengikuti stage selanjutnya, semua stage selesai
+    informasi ramping-vus -> https://grafana.com/docs/k6/latest/using-k6/scenarios/executors/ramping-vus 
+
+    c. iteration rate
+    - constant-arrival-rate -> executor yang akan melakukan iterasi secara constant sejumlah yang ditentukan, misal kita tentukan 100 iterasi per 1 detik selama 30 detik, artinya tiap 1 detik akan melakukan 100 iterasi selama 30 detik
+    informasi constant-arrival-rate -> https://grafana.com/docs/k6/latest/using-k6/scenarios/executors/constant-arrival-rate
+    - ramping-arrival-rate -> executor yang sama seperti constant-arrival-rate, hanya saja jumlah iterasi bisa naik dan turun mengikuti stage yang ditentukan
+    informasi ramping-arrival-rate -> https://grafana.com/docs/k6/latest/using-k6/scenarios/executors/ramping-arrival-rate 
+
