@@ -1,6 +1,7 @@
 import execution from "k6/execution";
 import { loginUser, registerUser } from "./helper/user.js";
 import { createContact } from "./helper/contact.js";
+import { Counter } from "k6/metrics";
 
 export const options = {
     scenarios: {
@@ -20,6 +21,9 @@ export const options = {
     }
 }
 
+const registerCounterSuccess = new Counter("user_registration_counter_success"); // string di dalam kurung adalah nama metric yang akan tampil di output result nya
+const registerCounterError = new Counter("user_registration_counter_error");
+
 export function userRegistration() {
     const uniqueId = new Date().getTime();
     const registerRequest = {
@@ -28,7 +32,13 @@ export function userRegistration() {
         email: `muhammadikbal${uniqueId}@gmail.com`,
         password: '123456'
     }
-    registerUser(registerRequest);
+    const response = registerUser(registerRequest);
+
+    if (response.status === 201) {
+        registerCounterSuccess.add(1);
+    } else {
+        registerCounterError.add(1);
+    }
 }
 
 export function contactCreation() {

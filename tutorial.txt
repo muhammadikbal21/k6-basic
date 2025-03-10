@@ -72,4 +72,11 @@ link youtube -> https://www.youtube.com/watch?v=VGO5CfOve90
     informasi constant-arrival-rate -> https://grafana.com/docs/k6/latest/using-k6/scenarios/executors/constant-arrival-rate
     - ramping-arrival-rate -> executor yang sama seperti constant-arrival-rate, hanya saja jumlah iterasi bisa naik dan turun mengikuti stage yang ditentukan
     informasi ramping-arrival-rate -> https://grafana.com/docs/k6/latest/using-k6/scenarios/executors/ramping-arrival-rate 
-
+19. Metrics -> https://grafana.com/docs/k6/latest/using-k6/metrics/reference/
+    Saat kita menjalankan pengujian menggunakan K6, result dari outputnya adalah berupa data metric. K6 sendiri membagi metric menjadi beberapa kategori:
+    - Counters, untuk menghitung jumlah
+    - Gauges, untuk melacak smallest (terkecil), largest (terbesar), dan latest (terbaru)
+    - Rates, melacak seberapa sering nilai bukan nol muncul
+    - Trends, menghitung statistik untuk beberapa nilai (seperti rata-rata, persentil, dan lain-lain)
+    Kita bisa membuat custom metrics. Namun perlu diperhatikan, bahwa kita harus menambahkan data ke Metric secara manual.
+    informasi custom metrics -> https://grafana.com/docs/k6/latest/javascript-api/k6-metrics/
