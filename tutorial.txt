@@ -80,3 +80,9 @@ link youtube -> https://www.youtube.com/watch?v=VGO5CfOve90
     - Trends, menghitung statistik untuk beberapa nilai (seperti rata-rata, persentil, dan lain-lain)
     Kita bisa membuat custom metrics. Namun perlu diperhatikan, bahwa kita harus menambahkan data ke Metric secara manual.
     informasi custom metrics -> https://grafana.com/docs/k6/latest/javascript-api/k6-metrics/
+20. Thresholds -> https://grafana.com/docs/k6/latest/using-k6/thresholds/ 
+    K6 secara default, hasil pengujian akan selalu dianggap sukses, baik itu ada yang error atau tidak.
+    Kita bisa memberi pengaturan thresholds, untuk menentukan batas ambang apakah sebuah pengujian tsb sukses atau gagal.
+    Jika hasil pengujian sesuai dengan thresholds yang kita tentukan, maka dianggap sukses (✓). Jika tidak, maka dianggap gagal (✗).
+    Tanda centang dan silang akan muncul di output result nya.
+    Aturan thresholds harus mengikuti dengan jenis metric yang digunakan -> https://grafana.com/docs/k6/latest/javascript-api/k6-metrics/

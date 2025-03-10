@@ -4,6 +4,10 @@ import { createContact } from "./helper/contact.js";
 import { Counter } from "k6/metrics";
 
 export const options = {
+    thresholds: {
+        user_registration_counter_success: ['count > 190'], // disini kita bikin thresholds jika jumlah nya lebih besar dari 190, dia akan sukses dan muncul tanda centang
+        user_registration_counter_error: ['count < 1'] // disini kita bikin thresholds jika jumlah nya lebih kecil dari 1, dia akan gagal/error dan muncul tanda silang
+    },
     scenarios: {
         userRegistration: { // ini adalah nama scenario nya
             exec: "userRegistration", // ini memanggil nama function dibawah
