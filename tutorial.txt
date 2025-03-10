@@ -86,3 +86,6 @@ link youtube -> https://www.youtube.com/watch?v=VGO5CfOve90
     Jika hasil pengujian sesuai dengan thresholds yang kita tentukan, maka dianggap sukses (✓). Jika tidak, maka dianggap gagal (✗).
     Tanda centang dan silang akan muncul di output result nya.
     Aturan thresholds harus mengikuti dengan jenis metric yang digunakan -> https://grafana.com/docs/k6/latest/javascript-api/k6-metrics/
+21. Dokumentasi/Materi Tambahan
+    JavaScript Library -> https://grafana.com/docs/k6/latest/javascript-api/
+    Remote Modules K6 -> https://jslib.k6.io/
